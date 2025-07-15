@@ -1,0 +1,485 @@
+@charset "UTF-8";
+/*---===<<< SITE SETUP INCLUDE IN A GLOBAL VARIABLES, MIX-IN, OR BASE FILES >>>===---*/
+/*---=== VARIABLES ===---*/
+/*--- COLORS ---*/
+/*--- MEDIA QUERIES ---*/
+/*---=== MIX-INS ===---*/
+.enrollment-form {
+  max-width: 580px;
+  margin: 30px auto;
+  width: 100%;
+  position: relative;
+  font-family: "azo-sans-web", sans-serif;
+  color: #414042;
+  font-weight: 400;
+  /*--- CHECKBOX AND RADIOS ---*/
+}
+.enrollment-form h2 {
+  color: #435560;
+  font-size: 22px;
+}
+.enrollment-form h3 {
+  color: #435560;
+  font-size: 22px;
+  border-bottom: solid 2px #82bc00;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  margin-top: 55px;
+}
+.enrollment-form h3.no-top {
+  margin-top: 0;
+}
+.enrollment-form h3 span {
+  background: #435560;
+  font-weight: 700;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  margin: 0 10px -5px 0;
+  position: relative;
+  top: -3px;
+  text-align: center;
+  line-height: 20px;
+}
+.enrollment-form h4 {
+  font-size: 16px;
+  color: #435560;
+  margin: 0 0 20px;
+}
+.enrollment-form hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #d1d3d4;
+  margin: 2em 0;
+  padding: 0;
+}
+.enrollment-form label {
+  color: #435560;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.enrollment-form label small {
+  color: #414042;
+}
+.enrollment-form ::-webkit-input-placeholder {
+  opacity: 1;
+  color: #414042;
+}
+.enrollment-form :-moz-placeholder {
+  opacity: 1;
+  color: #414042;
+}
+.enrollment-form ::-moz-placeholder {
+  opacity: 1;
+  color: #414042;
+}
+.enrollment-form :-ms-input-placeholder {
+  opacity: 1;
+  color: #414042;
+}
+.enrollment-form .form-group {
+  position: relative;
+}
+.enrollment-form .parsley-errors-list {
+  position: absolute;
+  color: #dc2738;
+  font-size: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  right: 0;
+  top: 6px;
+}
+.enrollment-form .parsley-errors-list li:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-right: 3px;
+  content: "";
+}
+.enrollment-form .form-row .parsley-errors-list {
+  right: 5px;
+}
+.enrollment-form .error-box {
+  margin: -5px 0 5px 0;
+}
+.enrollment-form .error-box .parsley-errors-list {
+  position: relative;
+  left: auto;
+  top: auto;
+}
+.enrollment-form .parsley-error {
+  border-color: #dc2738 !important;
+}
+.enrollment-form .form-control {
+  border: solid 1px #bcbec0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  font-size: 14px;
+  color: #414042;
+  padding: 20px 20px 20px 20px;
+  height: 48px;
+}
+.enrollment-form .form-control.push {
+  margin-bottom: 10px;
+}
+.enrollment-form .form-control:focus {
+  outline: none;
+  border-color: #6c6d6e;
+  box-shadow: none;
+}
+.enrollment-form .form-control .form-check {
+  margin-bottom: 0;
+}
+.enrollment-form .form-check.autopay {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.enrollment-form select.form-control {
+  height: 48px !important;
+  padding: 0 16px !important;
+}
+.enrollment-form input[type=checkbox], .enrollment-form input[type=radio] {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.enrollment-form input[type=checkbox] + label, .enrollment-form input[type=radio] + label {
+  padding: 0 0 0 27px;
+  margin-bottom: 1em;
+  line-height: 1.25em;
+  cursor: pointer;
+  position: relative;
+}
+.enrollment-form input[type=checkbox] + label.small-label, .enrollment-form input[type=radio] + label.small-label {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 30px;
+}
+.enrollment-form input[type=checkbox] + label.small-label.top-pad, .enrollment-form input[type=radio] + label.small-label.top-pad {
+  margin-top: 60px;
+}
+.enrollment-form input[type=checkbox] + label.push, .enrollment-form input[type=radio] + label.push {
+  margin-bottom: 15px !important;
+}
+.enrollment-form input[type=checkbox] + label small, .enrollment-form input[type=radio] + label small {
+  display: block;
+}
+.enrollment-form input[type=checkbox] + label small.inline, .enrollment-form input[type=radio] + label small.inline {
+  display: inline;
+}
+.enrollment-form input[type=checkbox] + label:before, .enrollment-form input[type=radio] + label:before {
+  height: 18px;
+  width: 18px;
+  border: 1px solid #bec0c1;
+  background: #fff;
+  content: "";
+  display: block;
+  text-align: center;
+  color: #fff;
+  left: 0;
+  margin-left: 0;
+  position: absolute;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.enrollment-form input[type=checkbox] + label:last-child, .enrollment-form input[type=radio] + label:last-child {
+  margin-bottom: 0;
+}
+.enrollment-form input[type=checkbox]:checked + label:before, .enrollment-form input[type=radio]:checked + label:before {
+  border: solid 3px #fca500;
+}
+.enrollment-form input[type=radio] + label:before {
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+}
+.enrollment-form input[type=radio]:checked + label:before {
+  border: solid 3px #fca500;
+}
+.enrollment-form span[data-tooltip] {
+  position: relative;
+  color: #435560;
+  display: inline-block;
+  margin-left: 10px;
+}
+.enrollment-form span[data-tooltip]:before, .enrollment-form span[data-tooltip]:after {
+  display: none;
+}
+.enrollment-form span[data-tooltip]:before {
+  background: #ddd;
+  padding: 10px;
+  font-weight: 400;
+  position: absolute;
+  font-size: 14px;
+  left: 50%;
+  bottom: calc(100% + 15px);
+  max-width: 300px;
+  min-width: 250px;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  content: attr(data-tooltip);
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  color: #435560;
+}
+.enrollment-form span[data-tooltip]:after {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 5px);
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid #ddd;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  content: "";
+}
+.enrollment-form span[data-tooltip]:hover {
+  color: #fca500;
+}
+.enrollment-form span[data-tooltip]:hover:before, .enrollment-form span[data-tooltip]:hover:after {
+  display: block;
+}
+.enrollment-form .button-row {
+  margin-top: 60px;
+}
+.enrollment-form .button-row .btn {
+  font-weight: 700;
+  border: none;
+  font-size: 16px;
+  padding: 12px 40px 0;
+  margin: 0 0 0 30px;
+  box-shadow: none !important;
+  height: 50px;
+  color: #fff;
+}
+.enrollment-form .button-row .btn.btn-primary {
+  background: #fca500;
+}
+.enrollment-form .button-row .btn.btn-primary:hover {
+  background: #435560;
+  border-color: #435560;
+}
+.enrollment-form .button-row .btn.btn-secondary {
+  background: #fff;
+  color: #fca500;
+  border: solid 2px #fca500;
+}
+.enrollment-form .button-row .btn.btn-disabled {
+  background: #435560 !important;
+  color: #fff !important;
+  cursor: default !important;
+  border-color: #435560 !important;
+}
+.enrollment-form .button-row .btn:hover {
+  color: #fff;
+  background: #fca500;
+  border-color: #fca500;
+}
+.enrollment-form .edit {
+  float: right;
+  font-size: 14px;
+  font-weight: 500;
+}
+.enrollment-form .edit i {
+  display: inline-block;
+  margin-right: 5px;
+}
+.enrollment-form .pdf {
+  font-size: 14px;
+  margin: 5px 0 0;
+  display: block;
+}
+.enrollment-form .pdf i {
+  display: inline-block;
+  margin-right: 5px;
+}
+.enrollment-form .carousel-item {
+  padding-top: 15px;
+}
+.enrollment-form .carousel-item a {
+  color: #fca500;
+}
+.enrollment-form .carousel-item ol {
+  margin: 0 0 50px;
+  padding: 0;
+  list-style: upper-latin;
+  list-style-position: inside;
+}
+.enrollment-form .carousel-item ol li {
+  margin-bottom: 15px;
+}
+.enrollment-form .carousel-item ol li:before {
+  text-align: left;
+}
+.enrollment-form .carousel-item.confirmation table {
+  font-size: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #414042;
+}
+.enrollment-form .carousel-item.confirmation table td {
+  vertical-align: bottom;
+  padding: 0 0 5px;
+}
+.enrollment-form .carousel-item.confirmation table td:first-child {
+  font-weight: 500;
+  width: 200px;
+}
+.enrollment-form .carousel-item.confirmation strong {
+  color: #435560;
+}
+.enrollment-form .carousel-item.confirmation .disclaimer {
+  font-size: 14px;
+  margin-top: 15px;
+}
+.enrollment-form .carousel-item.information .disclaimer {
+  font-size: 14px;
+  margin-top: 55px;
+}
+.enrollment-form .carousel-indicators {
+  position: relative;
+  right: auto;
+  left: auto;
+  bottom: auto;
+  margin: 0 0 45px;
+  padding: 0;
+}
+.enrollment-form .carousel-indicators li {
+  margin: 0;
+  text-indent: 0;
+  width: auto;
+  height: auto;
+  padding: 27px 0 0 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #939598;
+  font-size: 12px;
+  min-width: 165px;
+  text-align: center;
+  background: none;
+  /*cursor:pointer;*/
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  /*&:hover{
+    color:$accent;
+    &:after{
+      background-color:$accent;
+    }
+  }*/
+}
+.enrollment-form .carousel-indicators li:before {
+  top: 5px;
+  border-bottom: solid 1px #d1d3d4;
+  right: -50%;
+  left: 50%;
+  position: absolute;
+  width: auto;
+  height: auto;
+  display: block;
+}
+.enrollment-form .carousel-indicators li:after {
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  content: "";
+  background: #d1d3d4;
+  width: 12px;
+  height: 12px;
+  display: block;
+  top: 0;
+  left: 50%;
+  margin-left: -6px;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+.enrollment-form .carousel-indicators li.active {
+  color: #fca500;
+}
+.enrollment-form .carousel-indicators li.active:after {
+  background-color: #fca500;
+}
+.enrollment-form .carousel-indicators li.done {
+  cursor: pointer;
+}
+.enrollment-form .carousel-indicators li.done:after {
+  border: solid 1px #fca500;
+  background: #fff;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "";
+  color: #fca500;
+  font-size: 8px;
+  padding-top: 1px;
+}
+.enrollment-form .carousel-indicators li.done:hover {
+  color: #fca500;
+}
+.enrollment-form .carousel-indicators li.done:hover:after {
+  background-color: #fca500;
+}
+.enrollment-form .carousel-indicators li:last-child:before {
+  display: none;
+}
+
+#phoneNumber::-webkit-outer-spin-button,
+#phoneNumber::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+
+#phoneNumberGuardian::-webkit-outer-spin-button,
+#phoneNumberGuardian::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+#phoneNumberFather::-webkit-outer-spin-button,
+#phoneNumberFather::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+#phoneNumberMother::-webkit-outer-spin-button,
+#phoneNumberMother::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Enrollment Form</title>
+  <script src="https://use.typekit.net/naf7ivh.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="displayoutput.js"></script>
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="container-fluid">
+    <form class="enrollment-form" id="enrollmentForm">
+      <div id="enrollmentCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#enrollmentCarousel" data-slide-to="0" class="active">Enrollment Form</li>
+          <li data-target="#enrollmentCarousel" data-slide-to="1">Confirmation</li>
+          <li data-target="#enrollmentCarousel" data-slide-to="2">Payment</li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+           <h2 id="required">Required fields.</h2>
+                  <div class="form-group">
+                    <label for="adminType">Admit Type:</label>
+                    <select class="form-control" id="adminType" name="adminType" >
+                      <option value="" hidden>Please select type</option>
+                      <option value="New Student">New Student</option>
+                      <option value="Transferee">Transferee</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="schoolType">Year Level:</label>
+                    <select class="form-control" id="yearLevel" name="yearLevel" >
+                      <option value="" hidden>Please select year level</option>
+                      <option value="First Year">First Year</option>
+                      <option value="Second Year">Second Year</option>
+                      <option value="Third Year">Third Year</option>
+                      <option value="Fourth Year">Fourth Year</option>
+                    </select>
+                  </div> 
+            
+
+               <h3>Student Information</h3>
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName"  aria-describedby="firstName"
+                      placeholder="Given Name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName" name="middleName"  aria-describedby="middleName"
+                      placeholder="Middle Name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName"  aria-describedby="lastName"
+                      placeholder="Surname" />
+                  </div>
+                  <div class="form-group">
+                    <label for="suffixName">Suffix Name</label>
+                    <input type="text" class="form-control" id="suffixName" name="suffixName" placeholder="(e.g. Jr.)" />
+                  </div>
+                  <div class="form-group">
+                    <label for="languagePreference">Gender</label>
+                    <div class="error-box" id="gender-error-handler"></div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="gender1" value="Male" 
+                        data-parsley-errors-container="#gender-error-handler">
+                      <label class="form-check-label" for="gender1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gender" id="gender2" value="Female" 
+                        data-parsley-errors-container="#gender-error-handler">
+                      <label class="form-check-label" for="gender2">Female</label>
+                    </div>
+                  </div>
+                  <div class="form-group form-check-inline">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" name="status"  placeholder="Civil Status">
+                      <option value="" hidden>Civil Status</option>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="citizenship">Citizenship</label>
+                    <input type="text" class="form-control" id="citizenship" name="citizenship" placeholder="Citizenship" />
+                  </div>
+                  <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" class="form-control" id="dateOfBirth" name="date_of_birth"  aria-describedby="dateOfBirth" />
+                  </div>
+                  <div class="form-group">
+                    <label for="birthPlace">Birthplace</label>
+                    <input type="text" class="form-control" id="birthPlace" name="birth_place"  aria-describedby="birthPlace"
+                      placeholder="Birthplace" />
+                  </div>
+                  <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <input type="text" class="form-control" id="religion" name="religion"  aria-describedby="religion"
+                      placeholder="Religion" />
+                  </div>
+
+                          <h3>Current Address</h3>
+                          <div class="form-group">
+                            <label for="streetNumber">Street #/ Unit #:</label>
+                            <input type="text" class="form-control push" id="streetNumber_current" name="street_number_current"
+                              aria-describedby="streetNumber" />
+                          </div>
+                          <div class="form-group">
+                            <label for="street">Street:</label>
+                            <input type="text" class="form-control push" id="street_current" name="street_current" aria-describedby="street" />
+                          </div>
+                          <div class="form-group">
+                            <label for="subdivision_village_bldg">Subdivision/Village/Bldg:</label>
+                            <input type="text" class="form-control push" id="subdivision_village_bldg_current"
+                              name="subdivision_village_bldg_current" aria-describedby="subdivision_village_bldg" />
+                          </div>
+                          <div class="form-group">
+                            <label for="barangay">Barangay:</label>
+                            <input type="text" class="form-control push" id="barangay_current" name="barangay_current"
+                              aria-describedby="barangay" />
+                          </div>
+                          <div class="form-group">
+                            <label for="city_municipality">City/Municipality:</label>
+                            <input type="text" class="form-control push" id="city_municipality_current" name="city_municipality_current"
+                              aria-describedby="city_municipality" />
+                          </div>
+                          <div class="form-group">
+                            <label for="province">Province:</label>
+                            <input type="text" class="form-control push" id="province_current" name="province_current"
+                              aria-describedby="province" />
+                          </div>
+                          <div class="form-group form-check-inline">
+                            <label for="zip">Zip Code:</label>
+                            <input type="text" class="form-control zip" id="zip_current" name="zip_current" placeholder="xxxx" aria-describedby=""
+                              data-parsley-type="digits" />
+                          </div>
+                          
+                          <h3>Permanent Address</h3>
+                          <div class="form-group">
+                            <label for="streetNumberPremanentAddress">Street #/ Unit #:</label>
+                            <input type="text" class="form-control push" id="streetNumber_premanent" name="street_number_premanent"
+                              aria-describedby="streetNumber" />
+                          </div>
+                          <div class="form-group">
+                            <label for="streetPremanentAddress">Street:</label>
+                            <input type="text" class="form-control push" id="streetPremanentAddress" name="street_premanent"
+                              aria-describedby="streetPremanentAddress" />
+                          </div>
+                          <div class="form-group">
+                            <label for="subdivision_village_bldg_PremanentAddress">Subdivision / Village / Bldg:</label>
+                            <input type="text" class="form-control push" id="subdivision_village_bldg_PremanentAddress"
+                              name="subdivision_village_bldg_premanent" aria-describedby="subdivision_village_bldg_PremanentAddress" />
+                          </div>
+                          <div class="form-group">
+                            <label for="barangay_PremanentAddress">Barangay:</label>
+                            <input type="text" class="form-control push" id="barangay_PremanentAddress" name="barangay_premanent"
+                              aria-describedby="barangay_PremanentAddress" />
+                          </div>
+                          <div class="form-group">
+                            <label for="city_municipality_PremanentAddress">City/Municipality:</label>
+                            <input type="text" class="form-control push" id="city_municipality_PremanentAddress"
+                              name="city_municipality_premanent" aria-describedby="city_municipality_PremanentAddress" />
+                          </div>
+                          <div class="form-group">
+                            <label for="province_PremanentAddress">Province:</label>
+                            <input type="text" class="form-control push" id="province_PremanentAddress" name="province_premanent"
+                              aria-describedby="province_PremanentAddress" />
+                          </div>
+                          <div class="form-group form-check-inline">
+                            <label for="zip_PremanentAddress">Zip Code:</label>
+                            <input type="text" class="form-control zip" id="zip_PremanentAddress" name="zip_premanent" placeholder="xxxx"
+                              aria-describedby="" data-parsley-type="digits" />
+                          </div>
+                          
+                          <h3>Contact Details</h3>
+                          <div class="form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="number" class="form-control phone" id="phoneNumber" name="phoneNumber" aria-describedby="phoneNumber"
+                              placeholder="09Xxxxxxxxx" />
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
+                              placeholder="example@gmail.com" />
+                          </div>
+                          
+                          
+                          <h3>Current or Last School Attended</h3>
+                          <div class="form-group">
+                            <label for="schoolType">School Type:</label>
+                            <select class="form-control" id="schoolType" name="schoolType">
+                              <option value="" hidden>Please select type</option>
+                              <option value="Senior High School">Senior High School</option>
+                              <option value="College">College</option>
+                              <option value="Masteral">Masteral</option>
+                              <option value="Doctoral">Doctoral</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="name_of_school">Name of School:</label>
+                            <input type="text" class="form-control" id="name_of_school" name="name_of_school" aria-describedby="name_of_school" />
+                          </div>
+                          <div class="form-group">
+                            <label for="program_or_track">Program / Track & Strand / Specialization:</label>
+                            <input type="text" class="form-control" id="program_or_track" name="program" aria-describedby="program_or_track" />
+                          </div>
+                          <div class="form-group">
+                            <label for="date_of_graduation">Date of Graduation:</label>
+                            <input type="date" class="form-control" id="date_of_graduation" name="date_of_graduation"
+                              aria-describedby="date_of_graduation" />
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-sm-6">
+                              <label for="schoolType">School Year</label>
+                              <select class="form-control" id="school_year" name="school_year">
+                                <option value="" hidden>Select school year</option>
+                                <option value="2022-2023">2022-2023</option>
+                                <option value="2021-2022">2021-2022</option>
+                                <option value="2020-2021">2020-2021</option>
+                                <option value="2019-2020">2019-2020</option>
+                                <option value="2018-2019">2018-2019</option>
+                                <option value="2017-2018">2017-2018</option>
+                                <option value="2016-2017">2016-2017</option>
+                                <option value="2015-2016">2015-2016</option>
+                                <option value="2014-2015">2014-2015</option>
+                                <option value="2013-2014">2013-2014</option>
+                                <option value="2012-2013">2012-2013</option>
+                                <option value="2011-2012">2011-2012</option>
+                                <option value="2010-2011">2010-2011</option>
+                                <option value="2009-2010">2009-2010</option>
+                                <option value="2008-2009">2008-2009</option>
+                                <option value="2007-2008">2007-2008</option>
+                                <option value="2006-2007">2006-2007</option>
+                                <option value="2005-2006">2005-2006</option>
+                                <option value="2004-2005">2004-2005</option>
+                                <option value="2003-2004">2003-2004</option>
+                                <option value="2002-2003">2002-2003</option>
+                                <option value="2001-2002">2001-2002</option>
+                                <option value="2000-2001">2000-2001</option>
+                                <option value="1999-2000">1999-2000</option>
+                                <option value="1998-1999">1998-1999</option>
+                                <option value="1997-1998">1997-1998</option>
+                                <option value="1996-1997">1996-1997</option>
+                                <option value="1995-1996">1995-1996</option>
+                                <option value="1994-1995">1994-1995</option>
+                                <option value="1993-1994">1993-1994</option>
+                                <option value="1992-1993">1992-1993</option>
+                                <option value="1991-1992">1991-1992</option>
+                                <option value="1990-1991">1990-1991</option>
+                                <option value="1989-1990">1989-1990</option>
+                                <option value="1988-1989">1988-1989</option>
+                                <option value="1988-1989">1988-1989</option>
+                                <option value="1987-1988">1987-1988</option>
+                                <option value="1986-1987">1986-1987</option>
+                                <option value="1985-1986">1985-1986</option>
+                                <option value="1984-1985">1984-1985</option>
+                                <option value="1983-1984">1983-1984</option>
+                                <option value="1982-1983">1982-1983</option>
+                                <option value="1981-1982">1981-1982</option>
+                                <option value="1980-1981">1980-1981</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                              <label for="schoolType">Year Level / Grade:</label>
+                              <select class="form-control" id="year_grade" name="year_grade">
+                                <option value="" hidden>Select year / grade </option>
+                                <option value="Grade 12">Grade 12</option>
+                                <option value="First Year College">Frist Year College</option>
+                                <option value="Second Year College">Second Year College</option>
+                                <option value="Third Year College">Third Year College</option>
+                                <option value="Fourth Year College">Fourth Year College</option>
+                              </select>
+                            </div>
+                          </div>
+                          You sent
+                          <h3>Parents / Guardian's Information</h3>
+                          <h4 style="color:gray; font-weight:500;">Father's Information</h4>
+                          <div class="form-group">
+                            <label for="firstNameFather">First Name</label>
+                            <input type="text" class="form-control" id="firstNameFather" name="father_first_name"
+                              aria-describedby="firstNameFather" placeholder="First Name" />
+                          </div>
+                          <div class="form-group">
+                            <label for="lastNameFather">Last Name</label>
+                            <input type="text" class="form-control" id="lastNameFather" name="father_last_name" aria-describedby="lastNameFather"
+                              placeholder="Last Name" />
+                          </div>
+                          <div class="form-group">
+                            <label for="middleInitialFather">Middle Initial</label>
+                            <input type="text" class="form-control" id="middleInitialFather" name="father_middle_name"
+                              aria-describedby="middleInitialFather" placeholder="Middle initial" />
+                          </div>
+                          <div class="form-group">
+                            <label for="suffixNameFather">Suffix</label>
+                            <input type="text" class="form-control" id="suffixNameFather" name="father_suffix" placeholder="Suffix" />
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email_father" name="father_email" aria-describedby="email"
+                              placeholder="Email Address" />
+                          </div>
+                          <div class="form-group">
+                            <label for="phoneNumberFather">Mobile Number</label>
+                            <input type="number" class="form-control phone" id="phoneNumberFather" name="father_phone_number"
+                              aria-describedby="phoneNumberFather" placeholder="09Xxxxxxxxx" />
+                          </div>
+                          <div class="form-group">
+                            <label for="occupationFather">Occupation</label>
+                            <input type="text" class="form-control" id="occupationFather" name="father_occupation" placeholder="Occupation" />
+                          </div>
+                          
+                          <h4 style="color:gray; font-weight:500;">Mother's Information</h4>
+                          <div class="form-group">
+                            <label for="firstNameMother">First Name</label>
+                            <input type="text" class="form-control" id="firstNameMother" name="mother_first_name"
+                              aria-describedby="firstNameMother" placeholder="First Name" />
+                          </div>
+                          <div class="form-group">
+                            <label for="lastNameMother">Last Name</label>
+                            <input type="text" class="form-control" id="lastNameMother" name="mother_last_name" aria-describedby="lastNameMother"
+                              placeholder="Last Name" />
+                          </div>
+                          <div class="form-group">
+                            <label for="middleInitialMother">Middle Initial</label>
+                            <input type="text" class="form-control" id="middleInitialMother" name="mother_middle_name"
+                              aria-describedby="middleInitialMother" placeholder="Middle initial" />
+                          </div>
+                          <div class="form-group">
+                            <label for="suffixNameMother">Suffix</label>
+                            <input type="text" class="form-control" id="suffixNameMother" name="mother_suffix" placeholder="Suffix" />
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email_mother" name="mother_email" aria-describedby="email"
+                              placeholder="Email Address" />
+                          </div>
+                          <div class="form-group">
+                            <label for="phoneNumberMother">Mobile Number</label>
+                            <input type="number" class="form-control phone" id="phoneNumberMother" name="mother_phone_number"
+                              aria-describedby="phoneNumberMother" placeholder="09Xxxxxxxxx" />
+                          </div>
+                          <div class="form-group">
+                            <label for="occupationMother">Occupation</label>
+                            <input type="text" class="form-control" id="occupationMother" name="mother_occupation" placeholder="Occupation" />
+                          </div>
+                          
+                          <h4 style="color:gray; font-weight:500;">Guardian's Information</h4>
+                          <div class="form-group">
+                            <label for="firstNameGuardian">First Name</label>
+                            <input type="text" class="form-control" id="firstNameGuardian" name="guardian_first_name"
+                              aria-describedby="firstNameGuardian" placeholder="First Name" />
+                          </div>
+                          <div class="form-group">
+                            <label for="lastNameGuardian">Last Name</label>
+                            <input type="text" class="form-control" id="lastNameGuardian" name="guardian_last_name"
+                              aria-describedby="lastNameGuardian" placeholder="Last Name" />
+                          </div>
+                          <div class="form-group">
+                            <label for="middleInitialGuardian">Middle Initial</label>
+                            <input type="text" class="form-control" id="middleInitialGuardian" name="guardian_middle_name"
+                              aria-describedby="middleInitialGuardian" placeholder="Middle initial" />
+                          </div>
+                          <div class="form-group">
+                            <label for="suffixNameGuardian">Suffix</label>
+                            <input type="text" class="form-control" id="suffixNameGuardian" name="guardian_suffix" placeholder="Suffix" />
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email_guardian" name="guardian_email" aria-describedby="email"
+                              placeholder="Email Address" />
+                          </div>
+                          <div class="form-group">
+                            <label for="phoneNumberGuardian">Mobile Number</label>
+                            <input type="number" class="form-control phone" id="phoneNumberGuardian" name="guardian_phone_number"
+                              aria-describedby="phoneNumberGuardian" placeholder="09Xxxxxxxxx" />
+                          </div>
+                          <div class="form-group">
+                            <label for="occupationGuardian">Occupation</label>
+                            <input type="text" class="form-control" id="occupationGuardian" name="guardian_occupation" placeholder="Occupation" />
+                          </div>
+                          <div class="form-group">
+                            <label for="occupationGuardian">Relationship</label>
+                            <input type="text" class="form-control" id="relationship_guardian" name="guardian_relationship"
+                              placeholder="Relationship" />
+                          </div>
+                          <div class="button-row text-right">
+                            <a href="#" class="btn btn-primary next" onclick="displayInfo()">
+                              Next Step
+                            </a>
+                          </div>
+                          
+                          
+                          <!---Digits Error Handler html
+                                        data-parsley-type="digits"
+                                      -->
+                          </div>
+
+
+
+
+
+
+
+
+
+          <div class="carousel-item information">
+            <!--2nd Slide-->
+                <p>Don't forget to review, save and print the Terms and Conditions and the Disclosure Statement for your
+                  records.</p>
+                <h3>Review and Confirm</h3>
+                
+                <h4>Required Fields</h4>
+                <table>
+                  <tr>
+                    <td>Admin Type:</td>
+                    <td id="admin_type_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Year Level:</td>
+                    <td id="year_level_data"></td>
+                  </tr>
+                </table>
+                <hr>
+                <h4>Student Information</h4>
+                <table>
+                  <tr>
+                    <td>First Name:</td>
+                    <td id="first_name_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Middle Name:</td>
+                    <td id="middle_name_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Last Name:</td>
+                    <td id="last_name_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Suffix Name:</td>
+                    <td id="suffix_name_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Gender:</td>
+                    <td id="gender_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td>
+                    <td id="status_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Citizenship:</td>
+                    <td id="citizenship_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Date of Birth:</td>
+                    <td id="date_of_birth_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Birthplace:</td>
+                    <td id="birth_place_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Religion:</td>
+                    <td id="religion_data"></td>
+                  </tr>
+                </table>
+                
+                <hr />
+                
+                <h4>Current Address Information</h4>
+                <table>
+                  <tr>
+                    <td>Street #/ Unit#:</td>
+                    <td id="street_number_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Street:</td>
+                    <td id="street_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Subdivision / Village / Bldg:</td>
+                    <td id="subdivision_village_bldg_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Barangay:</td>
+                    <td id="barangay_data"></td>
+                  </tr>
+                  <tr>
+                    <td>City/Municipality:</td>
+                    <td id="city_municipality_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Province:</td>
+                    <td id="province_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Province:</td>
+                    <td id="zip_data"></td>
+                  </tr>
+                </table>
+                
+                <h4>Premanent Address Information</h4>
+                <table>
+                  <tr>
+                    <td>Street #/ Unit#:</td>
+                    <td id="street_number_data1"></td>
+                  </tr>
+                  <tr>
+                    <td>Street:</td>
+                    <td id="street_data1"></td>
+                  </tr>
+                  <tr>
+                    <td>Subdivision / Village / Bldg:</td>
+                    <td id="subdivision_village_bldg_data1"></td>
+                  </tr>
+                  <tr>
+                    <td>Barangay:</td>
+                    <td id="barangay_data1"></td>
+                  </tr>
+                  <tr>
+                    <td>City/Municipality:</td>
+                    <td id="city_municipality_data1"></td>
+                  </tr>
+                  <tr>
+                    <td>Province:</td>
+                    <td id="province_data1"></td>
+                  </tr>
+                  <tr>
+                    <td>Province:</td>
+                    <td id="zip_data1"></td>
+                  </tr>
+                </table>
+                
+                <hr />
+                
+                <h4>Contact Details</h4>
+                <table>
+                  <tr>
+                    <td>Phone Number:</td>
+                    <td id="phone_number_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Phone Number:</td>
+                    <td id="email_data"></td>
+                  </tr>
+                </table>
+                <hr />
+                
+                <h4>Current or Last School Attended Information</h4>
+                <table>
+                  <tr>
+                    <td>School Type:</td>
+                    <td id="school_type_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Name of School:</td>
+                    <td id="name_of_school_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Program / Track & Strand / Specialization:</td>
+                    <td id="program_or_track_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Date of Graduation:</td>
+                    <td id="date_of_graduation_data"></td>
+                  </tr>
+                  <tr>
+                    <td>School Year:</td>
+                    <td id="school_year_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Year Level / Grade:</td>
+                    <td id="year_grade_data"></td>
+                  </tr>
+                </table>
+                
+                <hr />
+                
+                <h3>Parent / Guardian's Information </h3>
+                <h4>Father Information </h4>
+                <table>
+                  <tr>
+                    <td>First Name:</td>
+                    <td id="first_name_father_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Last Name:</td>
+                    <td id="last_name_father_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Middle Name:</td>
+                    <td id="middle_name_father_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Suffix:</td>
+                    <td id="suffix_name_father_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td id="email_father_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Mobile Numbe:</td>
+                    <td id="phone_number_father_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Occupation:</td>
+                    <td id="occupation_father_data"></td>
+                  </tr>
+                </table>
+                
+                <h4>Mother Information </h4>
+                <table>
+                  <tr>
+                    <td>First Name:</td>
+                    <td id="first_name_mother_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Last Name:</td>
+                    <td id="last_name_mother_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Middle Name:</td>
+                    <td id="middle_name_mother_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Suffix:</td>
+                    <td id="suffix_name_mother_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td id="email_mother_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Mobile Number:</td>
+                    <td id="phone_number_mother_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Occupation:</td>
+                    <td id="occupation_mother_data"></td>
+                  </tr>
+                </table>
+                
+                <h4>Guardian's Information </h4>
+                <table>
+                  <tr>
+                    <td id="first_name_guardian_data">First Name:</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Last Name:</td>
+                    <td id="last_name_guardian_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Middle Name:</td>
+                    <td id="middle_name_guardian_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Suffix:</td>
+                    <td id="suffix_name_guardian_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td id="email_guardian_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Mobile Numbe:</td>
+                    <td id="phone_number_guardian_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Occupation:</td>
+                    <td id="occupation_guardian_data"></td>
+                  </tr>
+                  <tr>
+                    <td>Relationship:</td>
+                    <td id="relationship_guardian_data"></td>
+                  </tr>
+                </table>
+                <br>
+                  <hr />
+                  <p>Your enrollment application is nearly complete. Please acknowledge the following by selecting the boxes
+                    below:</p>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="readAgree" value="readAgree" 
+                      data-parsley-errors-container="#readAgreeErrors">
+                    <label class="form-check-label small-label push" for="readAgree">
+                  
+                      I have read and agree lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus et massa
+                      tincidunt ultricies ac venenatis odio. Fusce varius eget felis eu finibus. Donec sodales vulputate dui
+                      vel auctor. Donec efficitur cursus ligula sit amet sagittis. Vestibulum ac mollis ante. Nulla bibendum
+                      erat ornare nibh laoreet tristique. Sed sit amet maximus nibh.
+                    </label>
+                    <div class="error-box" id="readAgreeErrors"></div>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="changeAgree" value="changeAgree" 
+                      data-parsley-errors-container="#changeAgreeErrors">
+                    <label class="form-check-label small-label" for="changeAgree">
+                  
+                      I have decided to change my electricity supplier to <strong>Utility Provider</strong> lorem ipsum dolor
+                      sit amet, consectetur adipiscing elit. Nulla nec metus et massa tincidunt ultricies ac venenatis odio.
+                      Fusce varius eget felis eu finibus. Donec sodales vulputate dui vel auctor. Donec efficitur cursus
+                      ligula sit amet sagittis. Vestibulum ac mollis ante. Nulla bibendum erat ornare nibh laoreet tristique.
+                      Sed sit amet maximus nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec metus et
+                      massa tincidunt ultricies ac venenatis odio. Fusce varius eget felis eu finibus. Donec sodales vulputate
+                      dui vel auctor. Donec efficitur cursus ligula sit amet sagittis. Vestibulum ac mollis ante. Nulla
+                      bibendum erat ornare nibh laoreet tristique. Sed sit amet maximus nibh.
+                    </label>
+                    <div class="error-box" id="changeAgreeErrors"></div>
+                  </div>
+                  <p><strong>For your records, please print and/or save:</strong><br />
+                    <a href="#" class="pdf"><i class="fa fa-file-pdf-o"></i>Electricity Disclosure Statement</a>
+                    <a href="#" class="pdf"><i class="fa fa-file-pdf-o"></i>Electricity Terms and Conditions</a>
+                  </p>
+                  <p class="disclaimer">These documents will explain all the terms of this agreement lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit. Nulla nec metus et massa tincidunt ultricies ac venenatis odio. Fusce
+                    varius eget felis eu finibus. Donec sodales vulputate dui vel auctor. Donec efficitur cursus ligula sit
+                    amet sagittis. Vestibulum ac mollis ante. Nulla bibendum erat ornare nibh laoreet tristique. Sed sit amet
+                    maximus nibh. </p>
+                <div class="button-row text-right">
+                  <a href="#" class="btn btn-secondary prev">Back to Previous Section</a>
+                  <a href="#" class="btn btn-primary next">Next Section</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="carousel-item confirmation">
+            <!--3rd Slide-->
+
+          
+            <div class="button-row text-right">
+              <a href="#" class="btn btn-secondary prev">Previous Section</a>
+              <a href="#" class="btn btn-primary validate">Complete Enrollment</a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </form>
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.0/parsley.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js'></script>
+  <script async src="script.js"></script>
+
+</body>
+
+</html>
